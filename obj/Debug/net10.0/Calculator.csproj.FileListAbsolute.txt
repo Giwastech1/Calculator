@@ -12,3 +12,4 @@ C:\Users\User\Desktop\Dotnet\Calculator\obj\Debug\net10.0\refint\Calculator.dll
 C:\Users\User\Desktop\Dotnet\Calculator\obj\Debug\net10.0\Calculator.pdb
 C:\Users\User\Desktop\Dotnet\Calculator\obj\Debug\net10.0\Calculator.genruntimeconfig.cache
 C:\Users\User\Desktop\Dotnet\Calculator\obj\Debug\net10.0\ref\Calculator.dll
+C:\Users\User\Desktop\Dotnet\Calculator\obj\Debug\net10.0\Calculator.sourcelink.json

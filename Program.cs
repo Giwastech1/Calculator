@@ -20,7 +20,9 @@ static void ChooseOption()
 //ask user to input their desire option
 Console.Write("Choose an option: ");
 int option = Convert.ToInt32(Console.ReadLine());
-if (option == 1) {
+
+if (option == 1)
+{
     Console.Write("Enter your first input: ");
     int firstInput = Convert.ToInt32(Console.ReadLine());
     Console.Write("Enter your second input: ");
@@ -29,7 +31,24 @@ if (option == 1) {
     Console.WriteLine($"The result of {firstInput} + {secondInput} is {output}");
 }
 
+if (option == 2)
+{
+    Console.Write("Enter your first input: ");
+    int firstInput = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter your second input: ");
+    int secondInput = Convert.ToInt32(Console.ReadLine());
+    int output = Substraction(firstInput, secondInput);
+    Console.WriteLine($"The result of {firstInput} - {secondInput} is {output}");
+}
+
+//Addition program
 static int Addition(int a, int b)
 {
     return a + b;
+}
+
+//Substraction program
+static int Substraction(int a, int b)
+{
+    return a - b;
 }

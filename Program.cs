@@ -1,29 +1,30 @@
-﻿bool menuAfterResult = false;
-DisplayMenu();
+﻿//DisplayMenu();
 //function to display the menu.
-static void DisplayMenu()
+bool menuAfterResult = true;
+while (menuAfterResult)
 {
-    Console.WriteLine("==========================\nCALCULATOR\n==========================");
-    Console.WriteLine("What kind of operation will you like to perform ?");
-    Console.WriteLine("1. Addittion");
-    Console.WriteLine("2. Substraction");
-    Console.WriteLine("3. Multiplication");
-    Console.WriteLine("4. Division");
-    Console.WriteLine("5. Exit");
-}
-
+    DisplayMenu();
+    static void DisplayMenu()
+    {
+        Console.WriteLine("==========================\nCALCULATOR\n==========================");
+        Console.WriteLine("What kind of operation will you like to perform ?");
+        Console.WriteLine("1. Addittion");
+        Console.WriteLine("2. Substraction");
+        Console.WriteLine("3. Multiplication");
+        Console.WriteLine("4. Division");
+        Console.WriteLine("5. Exit");
+    }
 //ask user to input their desire option
 Console.Write("Choose an option: ");
 int option = Convert.ToInt32(Console.ReadLine());
-
-//Change if statement to switch statement
 switch (option)
 {
-    case 1:
-        int firstInput = ReadNumber("Enter your first input: ");
-        int secondInput = ReadNumber("Enter your second input: ");
-        int output = Addition(firstInput, secondInput);
-        Console.WriteLine($"The result of {firstInput} + {secondInput} is {output}");
+        case 1:
+            int firstInput = ReadNumber("Enter your first input: ");
+            int secondInput = ReadNumber("Enter your second input: ");
+            int output = Addition(firstInput, secondInput);
+           Console.WriteLine($"The result of {firstInput} + {secondInput} is {output}");
+            Console.WriteLine();
         break;
     case 2:
         firstInput = ReadNumber("Enter your first input: ");
@@ -42,16 +43,23 @@ switch (option)
         secondInput = ReadNumber("Enter your second input: ");
         if (secondInput == 0)
         {
-            Console.WriteLine("You cannot divide by zero");
-            return;
+                Console.WriteLine("You cannot divide by zero");
+                Console.WriteLine();
+                DisplayMenu();
+                continue;
         }
         output = Division(firstInput, secondInput);
         Console.WriteLine($"The result of {firstInput} / {secondInput} is {output}");
-        break;
+            break;
+        case 5:
+            menuAfterResult = false;
+            break;
     default:
         Console.WriteLine("Wrong input");
         break;
 }
+}
+
 
 //function to read num from console
 static int ReadNumber(string message)

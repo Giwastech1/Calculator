@@ -21,36 +21,36 @@ static void ChooseOption()
 Console.Write("Choose an option: ");
 int option = Convert.ToInt32(Console.ReadLine());
 
-if (option == 1)
+//Change if statement to switch statement
+switch (option)
 {
-    int firstInput = ReadNumber("Enter your first input: ");
-    int secondInput = ReadNumber("Enter your first input: ");
-    int output = Addition(firstInput, secondInput);
-    Console.WriteLine($"The result of {firstInput} + {secondInput} is {output}");
-}
-
-if (option == 2)
-{
-    int firstInput = ReadNumber("Enter your first input: ");
-    int secondInput = ReadNumber("Enter your first input: ");
-    int output = Substraction(firstInput, secondInput);
-    Console.WriteLine($"The result of {firstInput} - {secondInput} is {output}");
-}
-
-if (option == 3)
-{
-     int firstInput = ReadNumber("Enter your first input: ");
-    int secondInput = ReadNumber("Enter your second input: ");
-    int output = Multiplication(firstInput, secondInput);
-    Console.WriteLine($"The result of {firstInput} x {secondInput} is {output}");
-}
-
-if (option == 4)
-{
-    int firstInput = ReadNumber("Enter your first input: ");
-    int secondInput = ReadNumber("Enter your second input: ");
-    int output = Division(firstInput, secondInput);
-    Console.WriteLine($"The result of {firstInput} / {secondInput} is {output}");
+    case 1:
+        int firstInput = ReadNumber("Enter your first input: ");
+        int secondInput = ReadNumber("Enter your first input: ");
+        int output = Addition(firstInput, secondInput);
+        Console.WriteLine($"The result of {firstInput} + {secondInput} is {output}");
+        break;
+    case 2:
+        firstInput = ReadNumber("Enter your first input: ");
+        secondInput = ReadNumber("Enter your first input: ");
+        output = Substraction(firstInput, secondInput);
+        Console.WriteLine($"The result of {firstInput} - {secondInput} is {output}");
+        break;
+    case 3:
+        firstInput = ReadNumber("Enter your first input: ");
+        secondInput = ReadNumber("Enter your second input: ");
+        output = Multiplication(firstInput, secondInput);
+        Console.WriteLine($"The result of {firstInput} x {secondInput} is {output}");
+        break;
+    case 4:
+        firstInput = ReadNumber("Enter your first input: ");
+        secondInput = ReadNumber("Enter your second input: ");
+        output = Division(firstInput, secondInput);
+        Console.WriteLine($"The result of {firstInput} / {secondInput} is {output}");
+        break;
+    default:
+        Console.WriteLine("Wrong input");
+        break;
 }
 
 //function to read num from console

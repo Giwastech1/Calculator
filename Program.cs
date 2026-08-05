@@ -23,42 +23,41 @@ int option = Convert.ToInt32(Console.ReadLine());
 
 if (option == 1)
 {
-    Console.Write("Enter your first input: ");
-    int firstInput = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Enter your second input: ");
-    int secondInput = Convert.ToInt32(Console.ReadLine());
+    int firstInput = ReadNumber("Enter your first input: ");
+    int secondInput = ReadNumber("Enter your first input: ");
     int output = Addition(firstInput, secondInput);
     Console.WriteLine($"The result of {firstInput} + {secondInput} is {output}");
 }
 
 if (option == 2)
 {
-    Console.Write("Enter your first input: ");
-    int firstInput = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Enter your second input: ");
-    int secondInput = Convert.ToInt32(Console.ReadLine());
+    int firstInput = ReadNumber("Enter your first input: ");
+    int secondInput = ReadNumber("Enter your first input: ");
     int output = Substraction(firstInput, secondInput);
     Console.WriteLine($"The result of {firstInput} - {secondInput} is {output}");
 }
 
 if (option == 3)
 {
-    Console.Write("Enter your first input: ");
-    int firstInput = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Enter your second input: ");
-    int secondInput = Convert.ToInt32(Console.ReadLine());
+     int firstInput = ReadNumber("Enter your first input: ");
+    int secondInput = ReadNumber("Enter your second input: ");
     int output = Multiplication(firstInput, secondInput);
     Console.WriteLine($"The result of {firstInput} x {secondInput} is {output}");
 }
 
 if (option == 4)
 {
-    Console.Write("Enter your first input: ");
-    int firstInput = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Enter your second input: ");
-    int secondInput = Convert.ToInt32(Console.ReadLine());
+    int firstInput = ReadNumber("Enter your first input: ");
+    int secondInput = ReadNumber("Enter your second input: ");
     int output = Division(firstInput, secondInput);
     Console.WriteLine($"The result of {firstInput} / {secondInput} is {output}");
+}
+
+//function to read num from console
+static int ReadNumber(string message)
+{
+    Console.Write($"{message}");
+    return Convert.ToInt32(Console.ReadLine());
 }
 //Addition program
 static int Addition(int a, int b)

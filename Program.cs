@@ -1,14 +1,9 @@
-﻿DisplayMenu();
-ChooseOption();
+﻿bool menuAfterResult = false;
+DisplayMenu();
 //function to display the menu.
 static void DisplayMenu()
 {
     Console.WriteLine("==========================\nCALCULATOR\n==========================");
-}
-
-//function to choose options of program
-static void ChooseOption()
-{
     Console.WriteLine("What kind of operation will you like to perform ?");
     Console.WriteLine("1. Addittion");
     Console.WriteLine("2. Substraction");
@@ -26,13 +21,13 @@ switch (option)
 {
     case 1:
         int firstInput = ReadNumber("Enter your first input: ");
-        int secondInput = ReadNumber("Enter your first input: ");
+        int secondInput = ReadNumber("Enter your second input: ");
         int output = Addition(firstInput, secondInput);
         Console.WriteLine($"The result of {firstInput} + {secondInput} is {output}");
         break;
     case 2:
         firstInput = ReadNumber("Enter your first input: ");
-        secondInput = ReadNumber("Enter your first input: ");
+        secondInput = ReadNumber("Enter your second input: ");
         output = Substraction(firstInput, secondInput);
         Console.WriteLine($"The result of {firstInput} - {secondInput} is {output}");
         break;
@@ -45,6 +40,11 @@ switch (option)
     case 4:
         firstInput = ReadNumber("Enter your first input: ");
         secondInput = ReadNumber("Enter your second input: ");
+        if (secondInput == 0)
+        {
+            Console.WriteLine("You cannot divide by zero");
+            return;
+        }
         output = Division(firstInput, secondInput);
         Console.WriteLine($"The result of {firstInput} / {secondInput} is {output}");
         break;

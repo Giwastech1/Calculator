@@ -1,10 +1,7 @@
 ﻿//DisplayMenu();
 //function to display the menu.
-bool menuAfterResult = true;
-while (menuAfterResult)
-{
-    DisplayMenu();
-    static void DisplayMenu()
+bool running = true;
+static void DisplayMenu()
     {
         Console.WriteLine("==========================\nCALCULATOR\n==========================");
         Console.WriteLine("What kind of operation will you like to perform ?");
@@ -14,6 +11,10 @@ while (menuAfterResult)
         Console.WriteLine("4. Division");
         Console.WriteLine("5. Exit");
     }
+while (running)
+{
+    DisplayMenu();
+    
 //ask user to input their desire option
 Console.Write("Choose an option: ");
 int option = Convert.ToInt32(Console.ReadLine());
@@ -44,15 +45,13 @@ switch (option)
         if (secondInput == 0)
         {
                 Console.WriteLine("You cannot divide by zero");
-                Console.WriteLine();
-                DisplayMenu();
-                continue;
+                return;
         }
         output = Division(firstInput, secondInput);
         Console.WriteLine($"The result of {firstInput} / {secondInput} is {output}");
             break;
         case 5:
-            menuAfterResult = false;
+            running = false;
             break;
     default:
         Console.WriteLine("Wrong input");

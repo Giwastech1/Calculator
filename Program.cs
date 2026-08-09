@@ -57,16 +57,24 @@ while (running)
         case 4:
             firstInput = ReadNumber("Enter your first input: ");
             secondInput = ReadNumber("Enter your second input: ");
-            if (secondInput == 0)
+            bool notZero = true;
+            while (notZero)
             {
-                Console.WriteLine("You cannot divide by zero");
-                return;
+                if (secondInput == 0)
+                {
+                    Console.WriteLine("You cannot divide by zero");
+                    secondInput = ReadNumber("Enter your second number: ");
+                }
+                else
+                {
+                    notZero = false;
+                }
             }
-            output = Division(firstInput, secondInput);
-            Console.WriteLine();
-            Console.WriteLine($"The result of {firstInput} / {secondInput} is {output}");
-            Console.WriteLine();
-            break;
+                output = Division(firstInput, secondInput);
+                Console.WriteLine();
+                Console.WriteLine($"The result of {firstInput} / {secondInput} is {output}");
+                Console.WriteLine();
+                break;
         case 5:
             running = false;
             break;

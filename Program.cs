@@ -29,9 +29,9 @@ while (running)
     switch (validInput)
     {
         case 1:
-            int firstInput = ReadNumber("Enter your first input: ");
-            int secondInput = ReadNumber("Enter your second input: ");
-            int output = Addition(firstInput, secondInput);
+            double firstInput = ReadNumber("Enter your first input: ");
+            double secondInput = ReadNumber("Enter your second input: ");
+            double output = Addition(firstInput, secondInput);
             Console.WriteLine();
             Console.WriteLine($"The result of {firstInput} + {secondInput} is {output}");
             Console.WriteLine();
@@ -84,15 +84,15 @@ while (running)
 
 
 //function to read num from console.
-static int ReadNumber(string message)
+static double ReadNumber(string message)
 {
     bool isNotNumber = true;
-    int result = 0;
+    double result = 0;
     while (isNotNumber)
     {
         Console.Write($"{message}");
         string? readFromConsole = Console.ReadLine();
-        if (int.TryParse(readFromConsole, out result))
+        if (double.TryParse(readFromConsole, out result))
         {
             isNotNumber = false;
         }
@@ -104,24 +104,24 @@ static int ReadNumber(string message)
     return result;
 }
 //Addition program
-static int Addition(int a, int b)
+static double Addition(double a, double b)
 {
     return a + b;
 }
 
 //Substraction program
-static int Substraction(int a, int b)
+static double Substraction(double a, double b)
 {
     return a - b;
 }
 
 //Multiplication program
-static int Multiplication(int a, int b)
+static double Multiplication(double a, double b)
 {
     return a * b;
 }
 
- static int Division(int a, int b)
+ static double Division(double a, double b)
 {
     return a / b;
 }

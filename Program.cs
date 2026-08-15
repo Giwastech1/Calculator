@@ -28,6 +28,7 @@ while (running)
     else
     {
         Console.WriteLine("Enter a valid input.");
+        continue;
     }
     switch (validInput)
     {

@@ -21,13 +21,9 @@ while (running)
     Console.Write("Choose an option: ");
     //int option = Convert.ToInt32(Console.ReadLine());
     string? option = Console.ReadLine();
-    if (int.TryParse(option, out int validInput))
+    if (!int.TryParse(option, out int validInput))
     {
-        validInput = Convert.ToInt32(option);
-    }
-    else
-    {
-        Console.WriteLine("Enter a valid input.");
+         Console.WriteLine("Enter a valid input.");
         continue;
     }
     switch (validInput)
